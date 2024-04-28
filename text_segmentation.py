@@ -12,6 +12,7 @@ from scipy import spatial
 import matplotlib.pyplot as plt
 
 
+
 class text_segmentation_class:
 
     def __init__(self, file_name, glove_file):
@@ -22,8 +23,8 @@ class text_segmentation_class:
         self.distances= None
         self.avg_dist= None
         self.seg_text = None
-
-        self.stop_words = set(stopwords.words('english'))
+        nltk.download("stopwords")
+        self.stop_words =  set(stopwords.words('english'))
         self.glove_file = glove_file
         self.file_name = file_name
         self.doc = self.read_document()
